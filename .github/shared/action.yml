@@ -7,18 +7,17 @@ runs:
   using: composite
   steps:
     - shell: bash
-      run: echo "NODE_VERSION=$(cat .node-version)" >> $GITHUB_OUTPUT
-      name: Read .node-version
-      id: nvm
+      name: Install latest Corepack
+      run: npm install --global corepack@latest
 
     - shell: bash
       name: Enable Corepack
       run: corepack enable
 
     - name: Use Node.js ${{ steps.nvm.outputs.NODE_VERSION }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
+        node-version-file: ".node-version"
         cache: "pnpm"
 
     - shell: bash
