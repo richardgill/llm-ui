@@ -7,6 +7,6 @@ export const siteConfig: SiteConfig = {
   ogImage: "https://llm-ui.com/og.png",
   links: {
     discord: "https://discord.gg/gSgpjMxyT9",
-    github: "https://github.com/llm-ui-kit/llm-ui",
+    github: "https://github.com/richardgill/llm-ui",
   },
 };
