@@ -29,7 +29,7 @@
     "test": "vitest"
   },
   "peerDependencies": {
-    "react": "^18.0.0"
+    "react": ">=18.0.0 <20.0.0"
   },
   "devDependencies": {
     "@llm-ui/tsconfig": "workspace:*",
