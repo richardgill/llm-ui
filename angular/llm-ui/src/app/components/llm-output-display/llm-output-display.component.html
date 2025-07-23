@@ -1,0 +1,19 @@
+<div class="llm-output-container">
+  <ng-container *ngIf="(state$ | async) as state">
+    <ng-container *ngFor="let blockMatch of state.blockMatches">
+      <!-- Dynamic Component Rendering using ngComponentOutlet -->
+      <!-- Ensure blockMatch.block.component is a Component Type (Type<any>) -->
+      <ng-container *ngIf="blockMatch.isVisible && getComponentType(blockMatch) as componentType">
+        <ng-container *ngComponentOutlet="componentType;
+                                          inputs: { blockMatch: blockMatch }"></ng-container>
+      </ng-container>
+    </ng-container>
+    <!-- Debugging information -->
+    <!--
+    <pre>Visible Text: {{ state.visibleText }}</pre>
+    <pre>Is Finished: {{ state.isFinished }}</pre>
+    <pre>Finish Count: {{ state.finishCount }}</pre>
+    <pre>Block Matches: {{ state.blockMatches | json }}</pre>
+    -->
+  </ng-container>
+</div>

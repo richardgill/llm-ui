@@ -1,0 +1,28 @@
+<div style="padding: 20px;">
+  <div style="margin-bottom: 15px;">
+    <button (click)="setView('kitchenSink')" [disabled]="currentView === 'kitchenSink'">
+      Show Kitchen Sink Demo
+    </button>
+    <button (click)="setView('jsonExample')" [disabled]="currentView === 'jsonExample'" style="margin-left: 10px;">
+      Show JSON Buttons Example
+    </button>
+    <button (click)="setView('csvExample')" [disabled]="currentView === 'csvExample'" style="margin-left: 10px;">
+      Show CSV Buttons Example
+    </button>
+  </div>
+  <hr style="margin: 20px 0;">
+
+  <app-json-example *ngIf="currentView === 'jsonExample'"></app-json-example>
+  <app-csv-example *ngIf="currentView === 'csvExample'"></app-csv-example>
+
+  <div *ngIf="currentView === 'kitchenSink'">
+    <h1>{{ title }} LLM UI Angular (Kitchen Sink)</h1>
+    <app-llm-output-display
+      [llmOutput]="testLlmOutput"
+      [isStreamFinished]="testIsStreamFinished"
+      [blocks]="testBlocks"
+      [fallbackBlock]="testFallbackBlock">
+    </app-llm-output-display>
+  </div>
+</div>
+<router-outlet></router-outlet>
