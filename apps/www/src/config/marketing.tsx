@@ -18,19 +18,14 @@ export const marketingConfig: MarketingConfig = {
       href: "/contact",
       subLinks: [
         {
-          title: "Email us",
-          description: "richard@llm-ui.com",
-          href: `mailto:richard@llm-ui.com`,
+          title: "Contact me",
+          description: "richardgill.org",
+          href: "https://richardgill.org",
         },
         {
           title: "Open a Github issue",
           description: "For a bug or feature request",
           href: `${siteConfig.links.github}/issues/new`,
-        },
-        {
-          title: "Get help on Discord",
-          description: "Ask questions on Discord",
-          href: siteConfig.links.discord,
         },
       ],
     },
