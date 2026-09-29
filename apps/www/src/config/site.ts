@@ -6,7 +6,6 @@ export const siteConfig: SiteConfig = {
   url: "https://llm-ui.com",
   ogImage: "https://llm-ui.com/og.png",
   links: {
-    discord: "https://discord.gg/gSgpjMxyT9",
     github: "https://github.com/richardgill/llm-ui",
   },
 };
